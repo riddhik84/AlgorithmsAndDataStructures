@@ -1,7 +1,7 @@
 /*
 Given two sorted arrays, you have to implement the int[] mergeArrays(int[] arr1, int[] arr2) function which returns an array consisting of all elements of both arrays in a sorted way.
 
-Solution time complexity = O(n)
+Solution time complexity = O(n+m)
 */
 
 public class MergeTwoSortedArrays {
