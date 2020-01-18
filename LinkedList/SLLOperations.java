@@ -26,6 +26,13 @@ public class SLLOperations {
 		
 		System.out.println("Search a Node in Singly LinkList");
 		System.out.println("Search result for 20 " + searchNode(20, headNode));
+		
+		System.out.println("Delete head Node");
+		if(headNode != null){
+			headNode = headNode.nextNode;
+		}
+		printLinkedList(headNode);
+
 
 	}
 	
@@ -73,8 +80,7 @@ public class SLLOperations {
 				newNode.nextNode = tmp.nextNode;
 				tmp.nextNode = newNode;
 			}
-		}	
-				
+		}		
 	}
 	
 	static void deleteNodeAfter(int nodeValue, Node headNode){
@@ -88,15 +94,26 @@ public class SLLOperations {
 	}
 	
 	static void deleteANode(int nodeValue, Node headNode){
-		Node tmp = headNode;
-		while(tmp.nextNode != null){
-			Node prev = tmp;
-			tmp = tmp.nextNode;
-			if(tmp.data == nodeValue){
-				prev.nextNode = tmp.nextNode;
-				break;
+		if(headNode.data == nodeValue){
+			headNode = headNode.nextNode;
+		} else {
+			Node tmp = headNode;
+			while(tmp.nextNode != null){
+				Node prev = tmp;
+				tmp = tmp.nextNode;
+				if(tmp.data == nodeValue){
+					prev.nextNode = tmp.nextNode;
+					break;
+				}
 			}
 		}
+	}
+	
+	static boolean isEmpty(Node headNode){
+		if(headNode == null){
+			return true;
+		}
+		return false;
 	}
 	
 	static void printLinkedList(Node headNode){
