@@ -19,20 +19,14 @@ public class SLLOperations {
 		deleteNodeAfter(5, headNode);
 		printLinkedList(headNode);
 		
-		
-		System.out.println("Delete a specific Node");
-		deleteANode(0, headNode);
-		printLinkedList(headNode);
-		
 		System.out.println("Search a Node in Singly LinkList");
 		System.out.println("Search result for 20 " + searchNode(20, headNode));
 		
-		System.out.println("Delete head Node");
-		if(headNode != null){
-			headNode = headNode.nextNode;
-		}
+		// Delete head node - Time complexity: O(1)
+		// Delete any node - Time complexity: O(n)
+		System.out.println("Delete a specific Node");
+		headNode = deleteByValue(0, headNode);
 		printLinkedList(headNode);
-
 
 	}
 	
@@ -93,7 +87,7 @@ public class SLLOperations {
 		}
 	}
 	
-	static void deleteANode(int nodeValue, Node headNode){
+	static Node deleteByValue(int nodeValue, Node headNode){
 		if(headNode.data == nodeValue){
 			headNode = headNode.nextNode;
 		} else {
@@ -107,6 +101,7 @@ public class SLLOperations {
 				}
 			}
 		}
+		return headNode;
 	}
 	
 	static boolean isEmpty(Node headNode){
