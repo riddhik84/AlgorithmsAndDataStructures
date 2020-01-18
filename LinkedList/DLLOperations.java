@@ -5,6 +5,14 @@ public class DLLOperations {
 		DLLNode headNode = createDoublyLinkedList(10);
 		printDLL(headNode);
 		
+		//TailNode
+		DLLNode tailNode = getTailNode(headNode);
+		if(tailNode != null){
+			System.out.println("TailNode: " + tailNode.data);
+		} else {
+			System.out.println("TailNode is empty");
+		}
+		
 		//Delete a node by value
 		DLLNode headNode_1 = deleteByValue(1, headNode);
 		if(headNode_1 == null){
@@ -13,7 +21,26 @@ public class DLLOperations {
 			printDLL(headNode_1);
 		}
 		
-
+		//Insert at end with tailNode
+		DLLNode tailNodeNew = insertAtEnd(10, tailNode);
+		tailNode = tailNodeNew;
+		if(headNode_1 == null){
+			System.out.println("Node to delete is not found");
+		} else {
+			printDLL(headNode_1);
+		}
+		
+		//Delete at end with tailNode
+		DLLNode tailNodeNew1 = deleteAtEnd(10, tailNode);
+		tailNode = tailNodeNew1;
+		if(headNode_1 == null){
+			System.out.println("Node to delete is not found");
+		} else {
+			printDLL(headNode_1);
+		}
+		
+		//Find length of Linked List
+		System.out.println("Length of Linked List: " + DLL_Length(headNode_1));
 	}
 	
 	static boolean isEmpty(DLLNode headNode){
@@ -38,6 +65,32 @@ public class DLLOperations {
 		return headNode;
 	}
 	
+	static DLLNode getTailNode(DLLNode headNode){
+		DLLNode currentNode = headNode;
+		while(currentNode.nextNode != null){
+			currentNode = currentNode.nextNode;
+		}
+		return currentNode;
+	}
+	
+	static DLLNode insertAtEnd(int nodeValue, DLLNode tailNode){
+		DLLNode newNode = new DLLNode(nodeValue);
+		tailNode.nextNode = newNode;
+		newNode.prevNode = tailNode;
+		newNode.nextNode = null;
+		
+		tailNode = newNode;
+		return tailNode;
+	}
+	
+	static DLLNode deleteAtEnd(int nodeValue, DLLNode tailNode){
+		tailNode.prevNode.nextNode = null;
+		
+		tailNode = tailNode.prevNode;
+		return tailNode;
+	}
+
+	
 	static DLLNode deleteByValue(int nodeValue, DLLNode headNode){
 		if(headNode.data == nodeValue){
 			//Delete headNode
@@ -56,6 +109,20 @@ public class DLLOperations {
 				currentNode.prevNode.nextNode = null;
 			}
 			return headNode;
+		}
+	}
+	
+	static int DLL_Length(DLLNode headNode){
+		if(headNode == null){
+			return 0;
+		}else {
+			DLLNode currentNode = headNode;
+			int count = 0;
+			while(currentNode != null){
+				count++;
+				currentNode = currentNode.nextNode;
+			}
+			return count;
 		}
 	}
 	
