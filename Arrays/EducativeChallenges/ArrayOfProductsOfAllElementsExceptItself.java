@@ -1,9 +1,12 @@
-/*
-Given an array, return an array where each index stores the product of all numbers except the number on the index itself. Implement your solution in Java and see if your output matches the expected output!
+/**
+* Given an array of integers, return an array where each index stores the product of all numbers except the number on the index itself.
+*
+* @author Riddhi Kakadia
 */
+
 public class ArrayOfProductsOfAllElementsExceptItself{
 	public static void main(String[] args){
-		//Case without zero
+		//Test Case without zero in array
 		int[] arr1 = {1,2,3,4};
 		int[] output1 = findProduct(arr1);
 		int[] output11 = findProduct_sol2(arr1);
@@ -11,7 +14,7 @@ public class ArrayOfProductsOfAllElementsExceptItself{
 		printArray(output11);
 		System.out.println();
 		
-		//Case with 1 zero
+		//Test Case with 1 zero in array
 		int[] arr2 = {1,2,3,4,0};
 		int[] output2 = findProduct(arr2);
 		int[] output22 = findProduct_sol2(arr2);
@@ -19,7 +22,7 @@ public class ArrayOfProductsOfAllElementsExceptItself{
 		printArray(output22);
 		System.out.println();
 		
-		//Case with 2 zeros
+		//Test Case with 2 zeros in array
 		int[] arr3 = {1,2,3,4,0,0};
 		int[] output3 = findProduct(arr3);
 		int[] output33 = findProduct_sol2(arr3);
