@@ -1,6 +1,8 @@
 
 public class MyStack {
 	public static void main(String[] args){
+		
+		long start = System.nanoTime();
 		Stack<Integer> stack = new Stack<Integer>();
 		System.out.println("Empty stack " + stack.size());
 		
@@ -27,6 +29,11 @@ public class MyStack {
 		stack.pop();
 		System.out.println("Stack size " + stack.size());
 		stack.print();
+		
+		long end = System.nanoTime();
+		
+		System.out.println("Execution Time: " + (end - start) / 1e9);
+
 
 	}
 }
