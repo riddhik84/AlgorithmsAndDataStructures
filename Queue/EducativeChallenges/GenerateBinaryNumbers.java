@@ -3,6 +3,8 @@
 * Solution using Queue
 *
 * @author Riddhi Kakadia
+*
+* Time complexity: O(n)
 */
 
 public class GenerateBinaryNumbers {

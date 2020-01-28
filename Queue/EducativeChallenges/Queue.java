@@ -43,6 +43,13 @@ public class Queue<T> implements Iterable<T> {
 	public int size(){
 		return list.size();
 	}
+
+	public void print(){
+		for(T t : list){
+			System.out.print(t + " ");
+		}
+		System.out.println();
+	}
 	
 	@Override
 	public Iterator<T> iterator() {
