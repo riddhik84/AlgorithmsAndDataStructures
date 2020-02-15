@@ -11,15 +11,16 @@ import java.util.Arrays;
 
 class ArrayRotation {
 	public static void main(String[] args){
-		int elements = 3;
-		int[] input = {1,2,3,4,5,6,7,8,9,10,11,12};
-		System.out.println("Input Array: " + Arrays.toString(input));
-
-		//rotate(input, elements);
-		//System.out.println("Output Rotated array: " + Arrays.toString(input));
+		int elements = 4;
+		int[] input1 = {1,2,3,4,5,6,7,8,9,10,11,12};
+		System.out.println("Input Array: " + Arrays.toString(input1));
 		
-		inplacerotate(input, elements);
-		System.out.println("Output Rotated array: " + Arrays.toString(input));
+		rotate(input1, elements);
+		System.out.println("Output Rotated array: " + Arrays.toString(input1));
+		
+		int[] input2 = {1,2,3,4,5,6,7,8,9,10,11,12};
+		inplacerotate(input2, elements);
+		System.out.println("Output Rotated array: " + Arrays.toString(input2));
 		
 	}
 	
@@ -47,8 +48,16 @@ class ArrayRotation {
 	}
 	
 	
-	//In place array rotation/
-	//Divide the 
+	//In place array rotation
+	//Divide the array in number of groups equal to elements to be rotated
+	//Rotate each group in place within the array 1 by 1
+	//-- store the first number of the group in tmp
+	//-- rotate the su group
+	//-- copy the tmp number to last position of the rotated sub group
+	//
+	//Time complexity: O(n)
+	//Space complexity: O(1)
+	//
 	static void inplacerotate(int[] array, int elements){
 		int start = 0;
 		while(start < elements){
@@ -57,7 +66,8 @@ class ArrayRotation {
 			for(; i + elements < array.length; i = i + elements){
 				array[i] = array[i + elements];
 			}
-			System.out.println("TMP : " + Arrays.toString(array));
+			array[i] = tmp;
+			System.out.println("Array : " + Arrays.toString(array));
 			start++;
 		}
 	}
