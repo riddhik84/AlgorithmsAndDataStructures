@@ -36,8 +36,7 @@ class ArrayRotation {
 			tmp[i] = array[i];
 		}
 		
-		int i = 0;
-		for(; i < array.length - elements; i++){
+		for(i = 0; i < array.length - elements; i++){
 			array[i] = array[i + elements];
 		}
 		
@@ -51,7 +50,7 @@ class ArrayRotation {
 	//Divide the array in number of groups equal to elements to be rotated
 	//Rotate each group in place within the array 1 by 1
 	//-- store the first number of the group in tmp
-	//-- rotate the su group
+	//-- rotate the sub group
 	//-- copy the tmp number to last position of the rotated sub group
 	//
 	//Time complexity: O(n)
@@ -61,8 +60,8 @@ class ArrayRotation {
 		int start = 0;
 		while(start < elements){
 			int tmp = array[start];
-			int i = start;
-			for(; i + elements < array.length; i = i + elements){
+			
+			for(int i = start; i + elements < array.length; i = i + elements){
 				array[i] = array[i + elements];
 			}
 			array[i] = tmp;
