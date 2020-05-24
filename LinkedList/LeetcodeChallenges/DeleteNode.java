@@ -1,3 +1,4 @@
+//https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/553/
 
 public class DeleteNode{
 	public static void main(String[] args){
