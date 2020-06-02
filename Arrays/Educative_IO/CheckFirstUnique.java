@@ -33,10 +33,10 @@ class CheckFirstUnique {
 	  }
 	  
 	  //Use this method for map iteration. Because we need to find first non repeating from input array's sequence
-	  for (int i = 0; i < map.size(); i++){
+	  //Iterate array size not map size here.
+	  for (int i = 0; i < arr.length; i++){
             if (map.get(arr[i]) == 1) 
                 return arr[i]; 
-        
 	  }
 	 
     return - 1;
