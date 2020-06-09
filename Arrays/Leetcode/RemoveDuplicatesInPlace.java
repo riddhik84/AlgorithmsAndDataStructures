@@ -23,4 +23,24 @@ public class RemoveDuplicatesInPlace {
         }
         return newArrayLen;
     }
+    
+    //161 / 161 test cases passed.
+    //Status: Accepted
+    //Runtime: 0 ms
+    //Memory Usage: 41.5 MB
+    public int removeDuplicates_updated(int[] nums) {
+        int location = 1;
+
+        for (int i = 1; i < nums.length; i++) {
+            int current = nums[i];
+            int prev = nums[i - 1];
+
+            if (current != prev) {
+                nums[location] = current;
+                location++;
+            }
+        }
+        return location;
+        
+    }
 }
