@@ -1,6 +1,7 @@
 class Solution {
     //leetcode submitter's solution - 2ms - better approach
     public String reverseWords(String s) {
+        //convert in char array first
         char[] chr = s.toCharArray();
         int start=0;
         for(int i=0; i<chr.length; i++){
@@ -9,6 +10,8 @@ class Solution {
                 start = i+1;
             }
         }
+        
+        //last word need to be reversed
         revert(chr, start, s.length()-1);
         return new String(chr);
     }
