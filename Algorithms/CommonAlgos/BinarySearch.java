@@ -1,6 +1,10 @@
 /*
-- works only on sorted array
-- Time complexity - O(logN)
+* works only on sorted array
+* Time complexity - O(logN)
+* principle of divide and conquer
+
+* Algorithm to find if k element exists in the array
+
 */
 public class BinarySearch {
 	public static void main(String[] args){
@@ -26,6 +30,7 @@ public class BinarySearch {
 		System.out.println("Found " + k + " " + result); //false
 	}
 	
+	//Linear algo
 	static boolean binarySearchLinear(int[] nums, int k){
 		int left = 0;
 		int right = nums.length - 1;
@@ -44,7 +49,7 @@ public class BinarySearch {
 		return false; //number not found
 	}
 	
-	
+	//Recursion algo
 	static boolean binarySearchRecursive(int[] nums, int k){
 		int left = 0;
 		int right = nums.length - 1;
