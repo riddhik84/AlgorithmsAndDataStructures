@@ -1,0 +1,26 @@
+class Solution {
+    //Iterative approach takes 0ms to run - leetcode tests
+    public int fib(int N) {
+        if(N <= 1)
+            return N;
+        
+        int[] fib_arr = new int[N+1];
+        fib_arr[0] = 0;
+        fib_arr[1] = 1;
+        
+        //generate fibonacci series
+        for(int i = 2; i < fib_arr.length; i++){
+            fib_arr[i] = fib_arr[i-2] + fib_arr[i-1];
+        }
+        
+        return fib_arr[N];
+    }
+    
+    //recursion take 6ms to run - leetcode tests
+    public int fib_recursion(int N){
+        if(N <=1){
+            return N;
+        }
+        return fib(N-1) + fib(N-2);
+    }
+}
