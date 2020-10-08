@@ -2,8 +2,9 @@
 * works only on sorted array
 * Time complexity - O(logN)
 * principle of divide and conquer
+* can be implemented with linear algo and recursion
 
-* Algorithm to find if k element exists in the array
+* Algorithm to find if a given element K exists in the array/list
 
 */
 public class BinarySearch {
