@@ -43,4 +43,12 @@ public class PowerOfThree {
         int max = (int)Math.pow(3, 19);
         return max % n == 0;
     }
+	
+    //Solution without loops for power of 4
+    public boolean isPowerOf(int num) {
+        return num > 0 &&
+            (num & (num - 1)) == 0 &&
+            (num & 0x55555555) != 0;
+    }	
+	
 }
