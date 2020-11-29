@@ -20,7 +20,9 @@ public class RotateArray {
             }
             // reverse the input array
             arrayReverse(array, 0, array.length - 1);
+            //reverse from 0 to steps - 1
             arrayReverse(array, 0, steps - 1);
+            //reverse from steps to len-1
             arrayReverse(array, steps, array.length - 1);
         }
     }
