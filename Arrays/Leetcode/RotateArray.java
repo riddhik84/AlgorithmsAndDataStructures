@@ -14,7 +14,9 @@ public class RotateArray {
     public static void rotateArrayRight(int[] array, int steps) {
         if (array != null && array.length > 1 && array.length != steps) {
             if (steps > array.length) {
-                steps = steps - array.length;
+                //calculate the steps using mod
+                steps %= array.length;
+                //steps = steps - array.length;
             }
             // reverse the input array
             arrayReverse(array, 0, array.length - 1);
