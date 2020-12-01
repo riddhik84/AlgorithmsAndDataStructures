@@ -66,6 +66,7 @@ public class UnionAndIntersectionSLL {
 		if(head2 == null)
 			return head1;
 			
+		//use hashset to keep track of existing values in list1
 		HashSet<Integer> set = new HashSet<>();
 		Node n = head1;
 		
@@ -76,8 +77,10 @@ public class UnionAndIntersectionSLL {
 		
 		n = head2;
 		
+		//iterate list2 and check the values exist in list1
 		while(n != null){
 			if(set.contains(n.data)){
+				//create new node with intersection value and add it in the result
 				Node newNode = new Node(n.data, null);
 				rs.nextNode = newNode;	
 				rs = rs.nextNode;
@@ -85,6 +88,7 @@ public class UnionAndIntersectionSLL {
 			n = n.nextNode;
 		}
 		
+		//return result.next considering result node as dummy node
 		return result.nextNode;
 	}
 	
