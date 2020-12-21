@@ -1,5 +1,10 @@
 import java.util.Arrays;
 
+//Best case time complexity: Ω(n+k)		
+//Average case time complexity: Θ(n+k)	
+//Worst case time complexity: O(n+k)
+//Worst case space complexity: O(k)
+
 public class CountingSort {
 	public static void main(String[] args){
 		int[] input = {4,2,2,8,3,3,1};
