@@ -5,6 +5,8 @@ Average time complexity: Θ(n log(n))
 Worst time complexity: O(n^2)
 Space complexity: O(log(n))
 
+in-place algorithm as it stores only recursion function call
+
 Divide and Conquer algorithm
 
 There are many different versions of quickSort that pick pivot in different ways.
