@@ -1,2 +1,2 @@
-# DataStructuresInJava
-Data Structures in Java: An Interview Refresher
+# Algorithms and Data Structure
+Algorithms and DataStructure: An Interview Refresher
