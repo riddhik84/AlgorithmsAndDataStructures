@@ -1,7 +1,7 @@
 
 import java.util.*;
 
-public class CheckSubZero {
+public class CheckSubArraySumZero_06 {
 
   public static boolean findSubZero(int[] arr) {
 
