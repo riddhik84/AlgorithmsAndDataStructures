@@ -1,5 +1,19 @@
 import java.util.*;
 
+/*
+Breadth First Search
+Level Order Traversal
+Keep track of visited nodes in Graph
+
+0 -> 1,2
+1 -> 3,4
+2 -> 5,6,7
+
+Time complexity: O(n)
+
+Use Queue
+
+*/
 public class Graph_BFS {
 	
 	public static void main(String[] args){
@@ -19,12 +33,14 @@ public class Graph_BFS {
 			
 			while(!queue.isEmpty()){
 				GraphNode current = queue.poll();
+				current.setVisited(true);
 				System.out.println(current.value);
 				
 				if(current.getAdjacents() != null){
 					ArrayList<GraphNode> nodes = current.getAdjacents();
 					for(GraphNode n : nodes){
-						queue.offer(n);
+						if(!n.isVisited())
+							queue.offer(n);
 					}
 				}
 			}

@@ -41,7 +41,7 @@ public class GraphNode {
 		visited = visit;
 	}
 	
-	public boolean isVisited(GraphNode node){
+	public boolean isVisited(){
 		return visited;
 	}
 }
