@@ -14,7 +14,7 @@ Time complexity: O(n)
 Use Queue
 
 */
-public class Graph_BFS {
+public class Graph_BFS_01 {
 	
 	public static void main(String[] args){
 		Graph graph = new Graph();

@@ -13,7 +13,7 @@ Time complexity: O(n)
 Use Stack
 
 */
-public class Graph_DFS {
+public class Graph_DFS_02 {
 	
 	public static void main(String[] args){
 		Graph graph = new Graph();
