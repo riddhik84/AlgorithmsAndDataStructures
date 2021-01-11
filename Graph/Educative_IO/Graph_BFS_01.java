@@ -9,7 +9,7 @@ Keep track of visited nodes in Graph
 1 -> 3,4
 2 -> 5,6,7
 
-Time complexity: O(n)
+Time complexity: O(V + E)
 
 Use Queue
 

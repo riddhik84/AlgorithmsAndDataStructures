@@ -13,7 +13,8 @@ Time complexity: O(V + E)
 Recursion
 
 */
-public class Graph_DFS_02 {
+public class EdgeCount_UndirectedGraph_05 {
+	static int edgeCount = 0;
 	
 	public static void main(String[] args){
 		Graph graph = new Graph();
@@ -22,6 +23,8 @@ public class Graph_DFS_02 {
 		
 		//print graph DFS
 		depthFirstSearch(root);
+		//total edges
+		System.out.println("Total edges: " + edgeCount);
 	}
 	
 	//recursion	
@@ -32,6 +35,8 @@ public class Graph_DFS_02 {
 		ArrayList<GraphNode> allNeighbors = node.getAdjacents();
 		if (allNeighbors == null)
 			return;
+		else
+			edgeCount = edgeCount + allNeighbors.size();
 
 		for (GraphNode neighbor : allNeighbors) {
 			if (!neighbor.isVisited())
